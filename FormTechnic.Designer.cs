@@ -1,6 +1,6 @@
 ﻿namespace Practica
 {
-    partial class Form1
+    partial class FormTechnic
     {
         /// <summary>
         ///  Required designer variable.

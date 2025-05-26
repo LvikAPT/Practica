@@ -1,8 +1,8 @@
 namespace Practica
 {
-    public partial class Form1 : Form
+    public partial class FormTechnic : Form
     {
-        public Form1()
+        public FormTechnic()
         {
             InitializeComponent();
         }
