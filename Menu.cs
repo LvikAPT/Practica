@@ -17,9 +17,16 @@ namespace Practica
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            FormTechnic formTechnic = new FormTechnic();
+            formTechnic.Show();
+            this.Hide();
         }
     }
 }

@@ -29,16 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
+            buttonExit = new Button();
+            buttonStart = new Button();
             SuspendLayout();
+            // 
+            // npgsqlDataAdapter1
+            // 
+            npgsqlDataAdapter1.DeleteCommand = null;
+            npgsqlDataAdapter1.InsertCommand = null;
+            npgsqlDataAdapter1.SelectCommand = null;
+            npgsqlDataAdapter1.UpdateCommand = null;
+            // 
+            // buttonExit
+            // 
+            resources.ApplyResources(buttonExit, "buttonExit");
+            buttonExit.Name = "buttonExit";
+            buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
+            // 
+            // buttonStart
+            // 
+            resources.ApplyResources(buttonStart, "buttonStart");
+            buttonStart.Name = "buttonStart";
+            buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // Menu
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonStart);
+            Controls.Add(buttonExit);
             Name = "Menu";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
+        private Button buttonExit;
+        private Button buttonStart;
     }
 }
