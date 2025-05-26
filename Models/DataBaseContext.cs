@@ -23,13 +23,13 @@ public partial class DataBaseContext : DbContext
 
     public virtual DbSet<MaintenancePlan> MaintenancePlans { get; set; }
 
-    public virtual DbSet<RepairHistory> RepairHistories { get; set; }
+    public DbSet<RepairHistory> RepairHistories { get; set; }
 
     public virtual DbSet<RepairWorkDetail> RepairWorkDetails { get; set; }
 
     public virtual DbSet<RepairWorkType> RepairWorkTypes { get; set; }
 
-    public virtual DbSet<Technic> Technics { get; set; }
+    public DbSet<Technic> Technics { get; set; }
 
     public virtual DbSet<UsedPart> UsedParts { get; set; }
 

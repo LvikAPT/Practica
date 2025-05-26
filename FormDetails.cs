@@ -1,20 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Practica.Models;
 namespace Practica
 {
-    public partial class FormDetails : Form
+    public partial class FormRepairHistory : Form
     {
-        public FormDetails()
+        private DataBaseContext dbContext;
+        private int technicId;
+        public FormRepairHistory(int technicId)
         {
             InitializeComponent();
+            this.technicId = technicId;
+            dbContext = new DataBaseContext();
+            LoadRepairHistory();
+        }
+        private void LoadRepairHistory()
+        {
+            var repairHistory = dbContext.RepairHistories
+                .Where(r => r.TechnicId == technicId)
+                .ToList();
+            dataGridViewRepairHistory.DataSource = repairHistory;
         }
     }
 }

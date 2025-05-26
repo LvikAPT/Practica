@@ -3,19 +3,11 @@ using System.Collections.Generic;
 
 namespace Practica;
 
-public partial class RepairHistory
+public class RepairHistory
 {
-    public int RepairId { get; set; }
-
+    public int Id { get; set; }
     public int TechnicId { get; set; }
-
-    public DateOnly RepairDate { get; set; }
-
-    public string? Notes { get; set; }
-
-    public virtual ICollection<RepairWorkDetail> RepairWorkDetails { get; set; } = new List<RepairWorkDetail>();
-
-    public virtual Technic Technic { get; set; } = null!;
-
-    public virtual ICollection<UsedPart> UsedParts { get; set; } = new List<UsedPart>();
+    public DateTime RepairDate { get; set; }
+    public string Description { get; set; }
+    public virtual Technic Technic { get; set; }
 }

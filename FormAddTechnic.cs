@@ -18,8 +18,8 @@ namespace Practica
             textBoxName.Text = technic.Name;
             textBoxModel.Text = technic.Model;
             textBoxSerialNumber.Text = technic.SerialNumber;
-            // Convert DateTime to DateOnly
-            dateTimePickerPurchaseDate.Value = technic.PurchaseDate?.ToDateTime() ?? DateTime.Now;
+            // Измените эту строку в конструкторе FormAddTechnic
+            dateTimePickerPurchaseDate.Value = technic.PurchaseDate?.ToDateTime(new TimeOnly(0, 0)) ?? DateTime.Now;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

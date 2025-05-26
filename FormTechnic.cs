@@ -84,5 +84,14 @@ namespace Practica
                 }
             }
         }
+        private void buttonShowHistory_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                var technicId = (int)dataGridView1.CurrentRow.Cells["TechnicId"].Value;
+                FormRepairHistory formRepairHistory = new FormRepairHistory(technicId);
+                formRepairHistory.ShowDialog();
+            }
+        }
     }
 }
