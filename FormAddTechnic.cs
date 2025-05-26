@@ -18,7 +18,8 @@ namespace Practica
             textBoxName.Text = technic.Name;
             textBoxModel.Text = technic.Model;
             textBoxSerialNumber.Text = technic.SerialNumber;
-            dateTimePickerPurchaseDate.Value = technic.PurchaseDate ?? DateTime.Now;
+            // Convert DateTime to DateOnly
+            dateTimePickerPurchaseDate.Value = technic.PurchaseDate?.ToDateTime() ?? DateTime.Now;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -28,11 +29,11 @@ namespace Practica
                 Name = textBoxName.Text,
                 Model = textBoxModel.Text,
                 SerialNumber = textBoxSerialNumber.Text,
-                PurchaseDate = dateTimePickerPurchaseDate.Value
+                PurchaseDate = DateOnly.FromDateTime(dateTimePickerPurchaseDate.Value) // Преобразование DateTime в DateOnly
             };
-
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
     }
 }
